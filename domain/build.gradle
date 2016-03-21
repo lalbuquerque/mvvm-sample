@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+version = rootProject.ext.application.versionName
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    def compileDependencies = rootProject.ext.dependencies
+
+    compile compileDependencies.rxjava
+    compile compileDependencies.gson
+    compile compileDependencies.dagger2
+    compile compileDependencies.support_annotations
+    compile 'com.android.support:support-annotations:23.1.1'
+}

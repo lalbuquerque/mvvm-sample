@@ -1,0 +1,12 @@
+apply plugin: 'java'
+
+version = rootProject.ext.application.versionName
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    def compileDependencies = rootProject.ext.dependencies
+    compile compileDependencies.rxjava
+    compile compileDependencies.gson
+    compile compileDependencies.dagger2
+    compile project(':domain')
+}
